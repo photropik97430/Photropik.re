@@ -1,0 +1,13 @@
+PHOTROPIK.RE — SITE VITRINE
+
+Contenu :
+- index.html : site complet, responsive (ordinateur et téléphone)
+- assets/ : logo et deux visuels publicitaires Photropik
+
+Pour prévisualiser : ouvrir index.html dans un navigateur.
+Pour publier gratuitement : utiliser GitHub Pages ou un hébergement statique équivalent, puis connecter le domaine photropik.re après achat.
+
+À vérifier avant publication :
+- confirmer que le numéro 0692 00 76 65 est toujours le bon ;
+- vérifier les photos/visuels et les mentions commerciales ;
+- ajouter les tarifs exacts si souhaité (ils ne sont pas affichés sauf demande de devis).
