@@ -205,6 +205,135 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
     }
+  
+    /* Présentations intégrées au décor tropical */
+    .services {
+      padding: 42px 22px 52px;
+      background:
+        radial-gradient(ellipse at 8% 12%, rgba(255, 196, 104, .22), transparent 24rem),
+        radial-gradient(ellipse at 92% 85%, rgba(237, 61, 145, .10), transparent 26rem),
+        linear-gradient(135deg, #fff4e8 0%, #fff0e8 52%, #fff5e9 100%);
+    }
+    .services .section-title {
+      color: #42104f;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      font-weight: 900;
+      letter-spacing: -.035em;
+      margin-bottom: 7px;
+    }
+    .services .intro {
+      color: #4a2052;
+      font-size: clamp(1rem, 1.6vw, 1.25rem);
+      margin-bottom: 34px;
+    }
+    .services .intro::after {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 5px;
+      margin: 17px auto 0;
+      border-radius: 50%;
+      background: linear-gradient(90deg, #ed3d91, #ff9b28);
+    }
+    .services .cards {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 18px;
+      align-items: stretch;
+    }
+    .services .card {
+      grid-column: span 2;
+      background: rgba(255, 247, 235, .88);
+      border: 2px solid rgba(255, 255, 255, .96);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 10px 22px rgba(177, 105, 49, .15);
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .services .card:nth-child(n+4) {
+      grid-column: span 3;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 285px;
+    }
+    .services .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 30px rgba(177, 105, 49, .22);
+    }
+    .services .card-photo {
+      height: 245px;
+      min-height: 0;
+      padding: 0;
+      overflow: hidden;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .services .card-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0;
+      transition: transform .4s ease;
+    }
+    .services .card:hover .card-photo img { transform: scale(1.045); }
+    .services .card-content {
+      position: relative;
+      padding: 22px 22px 20px;
+      background: linear-gradient(145deg, rgba(255, 248, 237, .97), rgba(255, 239, 224, .94));
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .services .card h3 {
+      color: #451052;
+      font-size: clamp(1.15rem, 1.65vw, 1.65rem);
+      line-height: 1.12;
+      min-height: 0;
+      margin: 0 0 12px;
+      font-weight: 900;
+    }
+    .services .card ul {
+      color: #201b23;
+      font-size: 1rem;
+      line-height: 1.4;
+      padding-left: 19px;
+      margin: 0 0 18px;
+    }
+    .services .card .btn {
+      align-self: flex-start;
+      width: auto;
+      margin-top: auto;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-size: .98rem;
+      background: linear-gradient(100deg, #f00062, #ff8b00);
+      box-shadow: 0 5px 12px rgba(237, 61, 145, .16);
+    }
+    .services .card:nth-child(n+4) .card-photo { height: 100%; min-height: 285px; }
+    .services .card:nth-child(n+4) .card-content { justify-content: center; }
+    @media (max-width: 850px) {
+      .services .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .services .card, .services .card:nth-child(n+4) {
+        grid-column: span 1;
+        display: flex;
+      }
+      .services .card-photo, .services .card:nth-child(n+4) .card-photo { height: 190px; min-height: 0; }
+      .services .card-content { padding: 17px; }
+    }
+    @media (max-width: 600px) {
+      .services { padding: 36px 14px 40px; }
+      .services .cards { grid-template-columns: 1fr; gap: 16px; }
+      .services .card, .services .card:nth-child(n+4) { grid-column: 1; }
+      .services .card-photo, .services .card:nth-child(n+4) .card-photo { height: 220px; min-height: 0; }
+      .services .card h3 { font-size: 1.3rem; }
+      .services .card .btn { width: 100%; justify-content: center; }
+    }
+
   </style>
 </head>
 <body>
