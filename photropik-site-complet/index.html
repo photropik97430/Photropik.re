@@ -1,63 +1,251 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Photropik.re à La Réunion : location de photobooth, granita, barbe à papa, livre d’or audio et vidéo et tente de réception.">
-<title>Photropik.re — Des souvenirs qui pétillent !</title>
-<style>
-:root{--pink:#ed3d91;--orange:#ff9b28;--ink:#20202a;--cream:#fffaf5}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream);line-height:1.55}
-header{position:sticky;top:0;z-index:5;background:#ffffffed;backdrop-filter:blur(10px);border-bottom:1px solid #f2dce6}
-nav{max-width:1120px;margin:auto;padding:9px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-nav img{width:125px;height:65px;object-fit:contain}nav a{color:var(--ink);text-decoration:none;font-weight:700;margin-left:18px;font-size:.94rem}
-.hero{max-width:1120px;margin:35px auto 55px;padding:0 22px;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
-.hero h1{font-size:clamp(2.4rem,5vw,4.3rem);line-height:1.02;margin:0 0 18px}.gradient{background:linear-gradient(90deg,var(--pink),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{font-size:1.15rem;color:#5b5660}.hero img{width:100%;border-radius:24px;box-shadow:0 18px 50px #4b1d3b24}
-.btn{display:inline-block;background:linear-gradient(100deg,var(--pink),var(--orange));color:white;text-decoration:none;padding:14px 22px;border-radius:30px;font-weight:800;margin:8px 8px 0 0;box-shadow:0 8px 20px #ed3d9133}
-.btn.alt{background:#24212b}.section{padding:65px 22px}.inner{max-width:1120px;margin:auto}.section h2{text-align:center;font-size:2.2rem;margin:0 0 12px}.intro{text-align:center;color:#6a6570;max-width:680px;margin:0 auto 35px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:white;padding:25px;border-radius:20px;box-shadow:0 8px 28px #2915290d;border:1px solid #f5e7ed}.card .emoji{font-size:2.2rem}.card h3{margin:8px 0;color:#c52c78}.card p{margin:0;color:#625d67}
-.soft{background:#fff0f6}.gallery{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}.gallery img{width:100%;height:auto;border-radius:18px;box-shadow:0 10px 30px #24152618}
-.contact{background:#211e29;color:white;text-align:center}.contact p{color:#eee}.contact a:not(.btn){color:#ffd0e6}
-footer{text-align:center;padding:24px;color:#777;font-size:.9rem}
-@media(max-width:760px){nav{flex-wrap:wrap}nav div{width:100%;display:flex;justify-content:center;flex-wrap:wrap}nav a{margin:5px 9px}.hero{grid-template-columns:1fr;margin-top:20px}.cards{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.section{padding:48px 18px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Photropik.re à La Réunion : location de photobooth, machine à granité, barbe à papa, livre d'or audio et vidéo et tente de réception. Demandez votre devis !">
+  <meta name="theme-color" content="#fff6ef">
+  <title>Photropik.re – Des souvenirs qui pétillent !</title>
+  <style>
+    :root {
+      --pink: #ed3d91;
+      --orange: #ff9b28;
+      --ink: #24202b;
+      --cream: #fff7ef;
+      --muted: #665b62;
+      --white: #fff;
+      --shadow: 0 14px 35px rgba(91, 49, 35, .12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 8% 12%, rgba(255, 190, 128, .18), transparent 23rem),
+        radial-gradient(circle at 92% 38%, rgba(237, 61, 145, .09), transparent 25rem),
+        var(--cream);
+    }
+    a { color: inherit; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(237,61,145,.15);
+    }
+    nav {
+      max-width: 1180px; margin: auto; padding: 12px 22px;
+      min-height: 88px; display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
+    }
+    .brand img { display: block; width: 150px; max-height: 70px; object-fit: contain; }
+    .navlinks { display: flex; gap: 28px; align-items: center; }
+    .navlinks a { text-decoration: none; font-weight: 700; font-size: 1.05rem; }
+    .navlinks a:hover { color: var(--pink); }
+    .hero {
+      max-width: 1180px; margin: auto; padding: 76px 22px 68px;
+      display: grid; grid-template-columns: 1.05fr .95fr;
+      align-items: center; gap: 44px;
+    }
+    .eyebrow {
+      color: #6c5660; font-weight: 900; letter-spacing: .14em;
+      text-transform: uppercase; font-size: .95rem;
+    }
+    h1 { font-size: clamp(2.7rem, 6vw, 5.2rem); line-height: 1.02; margin: 18px 0; letter-spacing: -.04em; }
+    .gradient {
+      background: linear-gradient(95deg, var(--pink), #ff704c, var(--orange));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero p { color: var(--muted); font-size: 1.2rem; line-height: 1.65; max-width: 650px; }
+    .hero-photo { width: 100%; max-height: 430px; object-fit: contain; border-radius: 26px; filter: drop-shadow(0 18px 28px rgba(80,40,30,.13)); }
+    .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+    .btn {
+      display: inline-flex; justify-content: center; align-items: center;
+      padding: 16px 25px; border-radius: 999px; text-decoration: none;
+      font-weight: 800; color: white; border: 0;
+      background: linear-gradient(100deg, var(--pink), var(--orange));
+      box-shadow: 0 10px 24px rgba(237,61,145,.18);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .btn.alt { background: var(--ink); box-shadow: none; }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(237,61,145,.25); }
+    section { padding: 66px 22px; }
+    .section-inner { max-width: 1180px; margin: auto; }
+    .section-title { text-align: center; margin: 0 0 12px; font-size: clamp(2rem, 4vw, 3.2rem); }
+    .intro { text-align: center; color: var(--muted); font-size: 1.08rem; line-height: 1.6; margin: 0 auto 38px; max-width: 760px; }
+    .services { background: rgba(255,239,246,.62); }
+    .cards { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 22px; }
+    .card {
+      background: rgba(255,255,255,.88); border: 1px solid rgba(255,255,255,.95);
+      border-radius: 25px; overflow: hidden; box-shadow: var(--shadow);
+      display: flex; flex-direction: column; min-width: 0;
+      transition: transform .4s ease, box-shadow .4s ease;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 20px 42px rgba(91,49,35,.18); }
+    .card-photo {
+      height: 245px; padding: 16px; display: flex; align-items: center; justify-content: center;
+      overflow: hidden; background:
+        radial-gradient(circle at 15% 20%, rgba(255,191,128,.35), transparent 45%),
+        linear-gradient(135deg, #fffaf5, #f8eadf);
+    }
+    .card-photo img {
+      width: 100%; height: 100%; object-fit: contain;
+      transition: transform .45s ease;
+    }
+    .card:hover .card-photo img { transform: scale(1.08); }
+    .card-content { padding: 22px 24px 25px; display: flex; flex-direction: column; flex: 1; }
+    .card h3 { margin: 0 0 10px; font-size: 1.45rem; line-height: 1.2; }
+    .card ul { margin: 0 0 22px; padding-left: 20px; color: #29242b; line-height: 1.55; font-size: 1.02rem; }
+    .card .btn { margin-top: auto; align-self: flex-start; padding: 13px 20px; font-size: .96rem; }
+    .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: center; }
+    .gallery img { width: 100%; max-height: 360px; object-fit: contain; border-radius: 22px; box-shadow: var(--shadow); transition: transform .4s ease; }
+    .gallery img:hover { transform: scale(1.035); }
+    .contact { background: #24202b; color: white; text-align: center; }
+    .contact p { color: #eee2e8; line-height: 1.7; }
+    .contact a:not(.btn) { color: #ffd5e6; }
+    footer { text-align: center; padding: 24px; color: #786d73; font-size: .9rem; }
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; padding-top: 52px; gap: 28px; }
+      .hero-photo { max-height: 330px; }
+      .cards { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 600px) {
+      nav { padding: 10px 16px; min-height: 74px; flex-wrap: wrap; }
+      .brand img { width: 120px; max-height: 55px; }
+      .navlinks { gap: 15px; font-size: .9rem; }
+      .navlinks a { font-size: .92rem; }
+      .hero { padding: 42px 18px 48px; }
+      section { padding: 48px 16px; }
+      .cards, .gallery { grid-template-columns: 1fr; }
+      .card-photo { height: 230px; }
+      .card-content { padding: 20px; }
+      .btn { width: 100%; }
+      .actions { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
 </head>
 <body>
-<header><nav>
-<a href="#accueil"><img src="assets/logo-photropik.png" alt="Logo Photropik.re"></a>
-<div><a href="#prestations">Prestations</a><a href="#galerie">Galerie</a><a href="#contact">Contact</a></div>
-</nav></header>
-<main>
-<section class="hero" id="accueil">
-<div><p class="gradient" style="font-weight:900;letter-spacing:.12em">PHOTROPIK.re · LA RÉUNION</p>
-<h1>Des souvenirs <span class="gradient">qui pétillent&nbsp;!</span></h1>
-<p>Faites de vos événements des moments inoubliables grâce à nos animations et locations festives : photos, gourmandises et souvenirs à partager.</p>
-<a class="btn" href="https://wa.me/262692007665?text=Bonjour%20Photropik%2C%20je%20souhaite%20un%20devis." target="_blank" rel="noopener">Demander un devis</a>
-<a class="btn alt" href="#prestations">Découvrir nos prestations</a>
-</div>
-<img src="assets/publicite-photropik.png" alt="Publicité Photropik : photobooth, granita, barbe à papa, livre d’or et tente de réception">
-</section>
-<section class="section soft" id="prestations"><div class="inner">
-<h2>Nos prestations</h2><p class="intro">Des animations pour les mariages, anniversaires, fêtes privées, baby showers et événements professionnels à La Réunion.</p>
-<div class="cards">
-<article class="card"><div class="emoji">📸</div><h3>Photobooth</h3><p>Des photos fun et inoubliables, avec fonds photos personnalisés et déguisements possibles.</p></article>
-<article class="card"><div class="emoji">🥤</div><h3>Granita</h3><p>Des boissons fraîches et gourmandes pour régaler petits et grands.</p></article>
-<article class="card"><div class="emoji">🍭</div><h3>Barbe à papa</h3><p>Une touche sucrée et festive pour apporter encore plus de magie à votre événement.</p></article>
-<article class="card"><div class="emoji">☎️</div><h3>Livre d’or audio & vidéo</h3><p>Les messages et les souvenirs de vos invités à conserver après la fête.</p></article>
-<article class="card"><div class="emoji">⛺</div><h3>Tente de réception</h3><p>Un espace supplémentaire pour accueillir vos proches et profiter de votre événement.</p></article>
-<article class="card"><div class="emoji">🎉</div><h3>Événements sur mesure</h3><p>Une demande particulière ? Contactez-nous pour échanger sur votre projet et obtenir un devis.</p></article>
-</div></div></section>
-<section class="section" id="galerie"><div class="inner"><h2>Un aperçu de notre univers</h2><p class="intro">Une ambiance tropicale et colorée pour faire pétiller vos événements.</p>
-<div class="gallery"><img src="assets/services-photropik.png" alt="Les équipements et prestations Photropik"><img src="assets/publicite-photropik.png" alt="Affiche publicitaire Photropik Events"></div>
-</div></section>
-<section class="section contact" id="contact"><div class="inner"><h2>Parlons de votre événement !</h2>
-<p>Indiquez-nous la date, le lieu et les animations souhaitées. Nous vous répondrons avec une proposition adaptée.</p>
-<p><strong>Téléphone :</strong> <a href="tel:+262692007665">0692 00 76 65</a><br><strong>Instagram :</strong> <a href="https://www.instagram.com/photropik.re/" target="_blank" rel="noopener">@photropik.re</a></p>
-<a class="btn" href="https://wa.me/262692007665?text=Bonjour%20Photropik%2C%20je%20souhaite%20un%20devis." target="_blank" rel="noopener">Nous contacter sur WhatsApp</a>
-<a class="btn alt" href="https://www.instagram.com/photropik.re/" target="_blank" rel="noopener">Voir Instagram</a>
-</div></section>
-</main>
-<footer>© <span id="year"></span> Photropik.re · La Réunion · Tous droits réservés</footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
-</body></html>
+  <header>
+    <nav>
+      <a class="brand" href="#accueil" aria-label="Accueil Photropik.re">
+        <img src="assets/logo-photropik.png" alt="Logo Photropik.re">
+      </a>
+      <div class="navlinks">
+        <a href="#prestations">Prestations</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div>
+        <p class="eyebrow">Photropik.re · La Réunion</p>
+        <h1>Des souvenirs<br><span class="gradient">qui pétillent !</span></h1>
+        <p>Faites de vos événements des moments inoubliables grâce à nos animations et locations festives : photos, gourmandises et souvenirs à partager.</p>
+        <div class="actions">
+          <a class="btn" href="https://wa.me/262692007665?text=Bonjour%20Photropik.re%2C%20je%20souhaite%20un%20devis." target="_blank" rel="noopener">Demander un devis</a>
+          <a class="btn alt" href="#prestations">Découvrir nos prestations</a>
+        </div>
+      </div>
+      <img class="hero-photo" src="assets/publicite-photropik.png" alt="Les animations et locations Photropik.re">
+    </section>
+
+    <section class="services" id="prestations">
+      <div class="section-inner">
+        <h2 class="section-title">Nos prestations</h2>
+        <p class="intro">Des animations et locations festives pour tous vos événements à La Réunion.</p>
+        <div class="cards">
+          <article class="card">
+            <div class="card-photo"><img src="assets/photobooth.png" alt="Photobooth Photropik"></div>
+            <div class="card-content">
+              <h3>Photobooth</h3>
+              <ul><li>Fonds photo sur mesure</li><li>Impression immédiate</li></ul>
+              <a class="btn quote" data-service="Photobooth" href="#">Demander un devis</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-photo"><img src="assets/granita.png" alt="Machine à granité trois cuves"></div>
+            <div class="card-content">
+              <h3>Machine à granité</h3>
+              <ul><li>Granita</li><li>Boisson ou cocktail givrés</li></ul>
+              <a class="btn quote" data-service="Machine à granité" href="#">Demander un devis</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-photo"><img src="assets/barbe-a-papa.png" alt="Machine à barbe à papa"></div>
+            <div class="card-content">
+              <h3>Barbe à papa</h3>
+              <a class="btn quote" data-service="Barbe à papa" href="#">Demander un devis</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-photo"><img src="assets/livre-or.png" alt="Téléphone rétro Vous avez un Message pour le livre d'or audio et vidéo"></div>
+            <div class="card-content">
+              <h3>Livre d’or audio &amp; vidéo</h3>
+              <ul><li>Les souvenirs de vos invités en audio et vidéo</li></ul>
+              <a class="btn quote" data-service="Livre d’or audio et vidéo" href="#">Demander un devis</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-photo"><img src="assets/tente-reception.png" alt="Tente de réception blanche"></div>
+            <div class="card-content">
+              <h3>Tente de réception</h3>
+              <ul><li>Grand modèle jusqu’à 100 personnes</li></ul>
+              <a class="btn quote" data-service="Tente de réception" href="#">Demander un devis</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galerie">
+      <div class="section-inner">
+        <h2 class="section-title">Un aperçu de notre univers</h2>
+        <p class="intro">Une ambiance festive, des équipements soignés et des souvenirs à partager.</p>
+        <div class="gallery">
+          <img src="assets/services-photropik.png" alt="Les équipements et prestations Photropik.re">
+          <img src="assets/publicite-photropik.png" alt="Les animations Photropik.re à La Réunion">
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section-inner">
+        <h2 class="section-title">Parlons de votre événement !</h2>
+        <p>Indiquez-nous la date, le lieu et les animations souhaitées. Nous vous répondrons avec une proposition adaptée.</p>
+        <p><strong>Téléphone :</strong> <a href="tel:+262692007665">0692 00 76 65</a></p>
+        <p><strong>Instagram :</strong> <a href="https://www.instagram.com/photropik.re/" target="_blank" rel="noopener">@photropik.re</a></p>
+        <div class="actions" style="justify-content:center">
+          <a class="btn" href="https://wa.me/262692007665?text=Bonjour%20Photropik.re%2C%20je%20souhaite%20un%20devis." target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+          <a class="btn alt" href="https://www.instagram.com/photropik.re/" target="_blank" rel="noopener">Voir Instagram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> Photropik.re · La Réunion · Tous droits réservés</footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const phone = "262692007665";
+    document.querySelectorAll(".quote").forEach((button) => {
+      const service = button.dataset.service;
+      const message = `Bonjour Photropik.re, je souhaite obtenir un devis pour : ${service}.\\n\\nDate de l'événement :\\nLieu :\\nInformations complémentaires :`;
+      button.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      button.target = "_blank";
+      button.rel = "noopener";
+    });
+  </script>
+</body>
+</html>
